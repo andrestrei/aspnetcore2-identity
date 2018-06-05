@@ -1,0 +1,37 @@
+﻿@model WebAppString.Areas.Identity.Models.UserRolesCreateEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>IdentityUserRoleStr</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdentityUserRole.IdentityUserRoleId" />
+            <div class="form-group">
+                <label asp-for="IdentityUserRole.IdentityUserId" class="control-label"></label>
+                <select asp-for="IdentityUserRole.IdentityUserId" class="form-control" asp-items="Model.UserSelectList"></select>
+                <span asp-validation-for="IdentityUserRole.IdentityUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdentityUserRole.IdentityRoleId" class="control-label"></label>
+                <select asp-for="IdentityUserRole.IdentityRoleId" class="form-control" asp-items="Model.RoleSelectList"></select>
+                <span asp-validation-for="IdentityUserRole.IdentityRoleId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
